@@ -1,1 +1,3 @@
-__pycache__
+# Byte-compiled / optimized / compiled files
+__pycache__/
+scraper.log

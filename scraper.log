@@ -68,3 +68,39 @@
 2025-08-10 04:13:51,987 - ERROR - Failed to fetch https://www.taan.org.np/members/2436 after 3 attempts
 2025-08-10 04:13:52,237 - INFO - Progress: 1150 members scraped | Rate: 6.65 members/sec | Elapsed: 172.8s
 2025-08-10 04:13:58,552 - INFO - Progress: 1200 members scraped | Rate: 6.70 members/sec | Elapsed: 179.1s
+2025-08-10 04:14:04,359 - INFO - Progress: 1250 members scraped | Rate: 6.76 members/sec | Elapsed: 184.9s
+2025-08-10 04:14:11,592 - INFO - Progress: 1300 members scraped | Rate: 6.76 members/sec | Elapsed: 192.2s
+2025-08-10 04:14:17,429 - INFO - Progress: 1350 members scraped | Rate: 6.82 members/sec | Elapsed: 198.0s
+2025-08-10 04:14:24,657 - INFO - Progress: 1400 members scraped | Rate: 6.82 members/sec | Elapsed: 205.2s
+2025-08-10 04:14:28,497 - WARNING - Request failed (attempt 1/3): https://www.taan.org.np/members/1557 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:14:32,330 - INFO - Progress: 1450 members scraped | Rate: 6.81 members/sec | Elapsed: 212.9s
+2025-08-10 04:14:40,948 - INFO - Progress: 1500 members scraped | Rate: 6.77 members/sec | Elapsed: 221.5s
+2025-08-10 04:14:46,763 - INFO - Progress: 1550 members scraped | Rate: 6.82 members/sec | Elapsed: 227.3s
+2025-08-10 04:14:52,614 - INFO - Progress: 1600 members scraped | Rate: 6.86 members/sec | Elapsed: 233.2s
+2025-08-10 04:14:59,077 - INFO - Progress: 1650 members scraped | Rate: 6.88 members/sec | Elapsed: 239.7s
+2025-08-10 04:15:00,000 - WARNING - Request failed (attempt 2/3): https://www.taan.org.np/members/1557 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:15:07,780 - INFO - Progress: 1700 members scraped | Rate: 6.85 members/sec | Elapsed: 248.4s
+2025-08-10 04:15:13,861 - INFO - Progress: 1750 members scraped | Rate: 6.88 members/sec | Elapsed: 254.4s
+2025-08-10 04:15:21,206 - WARNING - Request failed (attempt 1/3): https://www.taan.org.np/members/1174 - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-08-10 04:15:21,361 - INFO - Progress: 1800 members scraped | Rate: 6.87 members/sec | Elapsed: 261.9s
+2025-08-10 04:15:29,504 - INFO - Progress: 1850 members scraped | Rate: 6.85 members/sec | Elapsed: 270.1s
+2025-08-10 04:15:32,502 - WARNING - Request failed (attempt 3/3): https://www.taan.org.np/members/1557 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:15:32,503 - ERROR - Failed to fetch https://www.taan.org.np/members/1557 after 3 attempts
+2025-08-10 04:15:38,086 - INFO - Progress: 1900 members scraped | Rate: 6.82 members/sec | Elapsed: 278.7s
+2025-08-10 04:15:45,368 - INFO - Progress: 1950 members scraped | Rate: 6.82 members/sec | Elapsed: 285.9s
+2025-08-10 04:15:51,761 - INFO - Progress: 2000 members scraped | Rate: 6.84 members/sec | Elapsed: 292.3s
+2025-08-10 04:16:00,127 - INFO - Progress: 2050 members scraped | Rate: 6.82 members/sec | Elapsed: 300.7s
+2025-08-10 04:16:21,006 - WARNING - Request failed (attempt 1/3): https://www.taan.org.np/members/711 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:16:25,486 - WARNING - Request failed (attempt 1/3): https://www.taan.org.np/members/1030 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:16:30,746 - WARNING - Request failed (attempt 1/3): https://www.taan.org.np/members/1089 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:16:57,500 - WARNING - Request failed (attempt 2/3): https://www.taan.org.np/members/1030 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:17:30,470 - WARNING - Request failed (attempt 3/3): https://www.taan.org.np/members/1030 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:17:30,471 - ERROR - Failed to fetch https://www.taan.org.np/members/1030 after 3 attempts
+2025-08-10 04:17:30,472 - INFO - Scraping completed!
+2025-08-10 04:17:30,472 - INFO - Total members scraped: 2092
+2025-08-10 04:17:30,472 - INFO - Failed URLs: 3
+2025-08-10 04:17:30,473 - INFO - Success rate: 99.9%
+2025-08-10 04:17:30,473 - INFO - Total time: 391.0 seconds
+2025-08-10 04:17:30,473 - INFO - Average rate: 5.35 members/second
+2025-08-10 04:17:30,475 - INFO - Retrying 3 failed URLs...
+2025-08-10 04:17:30,497 - ERROR - Error exporting to Excel: No module named 'openpyxl'
