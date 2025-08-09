@@ -1,3 +1,70 @@
 2025-08-10 04:10:59,425 - INFO - SCRAPEthis initialized - TAAN Member Data Scraper
 2025-08-10 04:10:59,425 - INFO - Starting concurrent member data scraping...
 2025-08-10 04:10:59,426 - INFO - Starting to collect member URLs from all pages...
+2025-08-10 04:11:01,836 - INFO - Found 56 member URLs on 'd' page
+2025-08-10 04:11:01,897 - INFO - Found 69 member URLs on 'b' page
+2025-08-10 04:11:01,907 - INFO - Found 100 member URLs on 'trending' page
+2025-08-10 04:11:02,809 - INFO - Found 107 member URLs on 'e' page
+2025-08-10 04:11:02,833 - INFO - Found 46 member URLs on 'f' page
+2025-08-10 04:11:02,861 - INFO - Found 84 member URLs on 'g' page
+2025-08-10 04:11:03,023 - INFO - Found 277 member URLs on 'a' page
+2025-08-10 04:11:03,767 - INFO - Found 35 member URLs on 'i' page
+2025-08-10 04:11:03,809 - INFO - Found 16 member URLs on 'j' page
+2025-08-10 04:11:03,963 - INFO - Found 46 member URLs on 'k' page
+2025-08-10 04:11:04,710 - INFO - Found 37 member URLs on 'l' page
+2025-08-10 04:11:04,786 - INFO - Found 165 member URLs on 'm' page
+2025-08-10 04:11:04,827 - INFO - Found 56 member URLs on 'c' page
+2025-08-10 04:11:04,954 - INFO - Found 205 member URLs on 'n' page
+2025-08-10 04:11:05,625 - INFO - Found 37 member URLs on 'o' page
+2025-08-10 04:11:05,771 - INFO - Found 0 member URLs on 'q' page
+2025-08-10 04:11:05,904 - INFO - Found 67 member URLs on 'r' page
+2025-08-10 04:11:06,166 - INFO - Found 294 member URLs on 'h' page
+2025-08-10 04:11:06,480 - INFO - Found 54 member URLs on 'p' page
+2025-08-10 04:11:06,607 - INFO - Found 170 member URLs on 's' page
+2025-08-10 04:11:06,830 - INFO - Found 13 member URLs on 'u' page
+2025-08-10 04:11:07,118 - INFO - Found 26 member URLs on 'v' page
+2025-08-10 04:11:07,441 - INFO - Found 56 member URLs on 'w' page
+2025-08-10 04:11:07,555 - INFO - Found 2 member URLs on 'x' page
+2025-08-10 04:11:07,977 - INFO - Found 23 member URLs on 'y' page
+2025-08-10 04:11:08,042 - INFO - Found 5 member URLs on 'z' page
+2025-08-10 04:11:09,310 - INFO - Found 149 member URLs on 't' page
+2025-08-10 04:11:09,311 - INFO - Total unique member URLs found: 2095
+2025-08-10 04:11:09,311 - INFO - Starting to scrape 2095 members with 10 concurrent workers...
+2025-08-10 04:11:10,254 - INFO - Progress: 1 members scraped | Rate: 0.09 members/sec | Elapsed: 10.8s
+2025-08-10 04:11:10,269 - INFO - Progress: 2 members scraped | Rate: 0.18 members/sec | Elapsed: 10.8s
+2025-08-10 04:11:10,283 - INFO - Progress: 3 members scraped | Rate: 0.28 members/sec | Elapsed: 10.9s
+2025-08-10 04:11:10,721 - INFO - Progress: 4 members scraped | Rate: 0.35 members/sec | Elapsed: 11.3s
+2025-08-10 04:11:10,733 - INFO - Progress: 5 members scraped | Rate: 0.44 members/sec | Elapsed: 11.3s
+2025-08-10 04:11:10,778 - INFO - Progress: 6 members scraped | Rate: 0.53 members/sec | Elapsed: 11.4s
+2025-08-10 04:11:10,796 - INFO - Progress: 7 members scraped | Rate: 0.62 members/sec | Elapsed: 11.4s
+2025-08-10 04:11:10,812 - INFO - Progress: 8 members scraped | Rate: 0.70 members/sec | Elapsed: 11.4s
+2025-08-10 04:11:11,205 - INFO - Progress: 9 members scraped | Rate: 0.76 members/sec | Elapsed: 11.8s
+2025-08-10 04:11:11,227 - INFO - Progress: 10 members scraped | Rate: 0.85 members/sec | Elapsed: 11.8s
+2025-08-10 04:11:16,140 - INFO - Progress: 50 members scraped | Rate: 2.99 members/sec | Elapsed: 16.7s
+2025-08-10 04:11:23,311 - INFO - Progress: 100 members scraped | Rate: 4.19 members/sec | Elapsed: 23.9s
+2025-08-10 04:11:31,117 - INFO - Progress: 150 members scraped | Rate: 4.73 members/sec | Elapsed: 31.7s
+2025-08-10 04:11:37,781 - INFO - Progress: 200 members scraped | Rate: 5.21 members/sec | Elapsed: 38.4s
+2025-08-10 04:11:43,823 - INFO - Progress: 250 members scraped | Rate: 5.63 members/sec | Elapsed: 44.4s
+2025-08-10 04:11:50,748 - INFO - Progress: 300 members scraped | Rate: 5.85 members/sec | Elapsed: 51.3s
+2025-08-10 04:11:57,354 - INFO - Progress: 350 members scraped | Rate: 6.04 members/sec | Elapsed: 57.9s
+2025-08-10 04:12:05,819 - INFO - Progress: 400 members scraped | Rate: 6.02 members/sec | Elapsed: 66.4s
+2025-08-10 04:12:12,984 - INFO - Progress: 450 members scraped | Rate: 6.12 members/sec | Elapsed: 73.6s
+2025-08-10 04:12:20,039 - INFO - Progress: 500 members scraped | Rate: 6.20 members/sec | Elapsed: 80.6s
+2025-08-10 04:12:26,584 - INFO - Progress: 550 members scraped | Rate: 6.31 members/sec | Elapsed: 87.2s
+2025-08-10 04:12:33,726 - INFO - Progress: 600 members scraped | Rate: 6.36 members/sec | Elapsed: 94.3s
+2025-08-10 04:12:42,492 - INFO - Progress: 650 members scraped | Rate: 6.31 members/sec | Elapsed: 103.1s
+2025-08-10 04:12:47,980 - WARNING - Request failed (attempt 1/3): https://www.taan.org.np/members/2436 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:12:49,779 - INFO - Progress: 700 members scraped | Rate: 6.34 members/sec | Elapsed: 110.4s
+2025-08-10 04:12:57,535 - INFO - Progress: 750 members scraped | Rate: 6.35 members/sec | Elapsed: 118.1s
+2025-08-10 04:13:05,869 - INFO - Progress: 800 members scraped | Rate: 6.33 members/sec | Elapsed: 126.4s
+2025-08-10 04:13:13,693 - INFO - Progress: 850 members scraped | Rate: 6.33 members/sec | Elapsed: 134.3s
+2025-08-10 04:13:19,483 - WARNING - Request failed (attempt 2/3): https://www.taan.org.np/members/2436 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:13:20,651 - INFO - Progress: 900 members scraped | Rate: 6.37 members/sec | Elapsed: 141.2s
+2025-08-10 04:13:27,306 - INFO - Progress: 950 members scraped | Rate: 6.42 members/sec | Elapsed: 147.9s
+2025-08-10 04:13:34,145 - INFO - Progress: 1000 members scraped | Rate: 6.46 members/sec | Elapsed: 154.7s
+2025-08-10 04:13:39,425 - INFO - Progress: 1050 members scraped | Rate: 6.56 members/sec | Elapsed: 160.0s
+2025-08-10 04:13:45,332 - INFO - Progress: 1100 members scraped | Rate: 6.63 members/sec | Elapsed: 165.9s
+2025-08-10 04:13:51,986 - WARNING - Request failed (attempt 3/3): https://www.taan.org.np/members/2436 - HTTPSConnectionPool(host='www.taan.org.np', port=443): Read timed out. (read timeout=30)
+2025-08-10 04:13:51,987 - ERROR - Failed to fetch https://www.taan.org.np/members/2436 after 3 attempts
+2025-08-10 04:13:52,237 - INFO - Progress: 1150 members scraped | Rate: 6.65 members/sec | Elapsed: 172.8s
+2025-08-10 04:13:58,552 - INFO - Progress: 1200 members scraped | Rate: 6.70 members/sec | Elapsed: 179.1s
