@@ -18,7 +18,7 @@ DELAY_BETWEEN_REQUESTS = 0.5  # Minimum delay between requests (seconds)
 
 # Output settings
 OUTPUT_FILE = "ScrapedData.xlsx"
-MISSING_DATA_PLACEHOLDER = "0"
+MISSING_DATA_PLACEHOLDER = "none"
 
 # Headers to mimic a real browser
 HEADERS = {
