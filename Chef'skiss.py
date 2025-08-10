@@ -24,6 +24,7 @@ class TAANScraper:
         self.scraped_urls: Set[str] = set()
         self.scraped_data: List[Dict[str, str]] = []
         self.failed_urls: List[str] = []
+        self.url_to_type: Dict[str, str] = {}
         self.lock = threading.Lock()
         self.progress_counter = 0
         self.start_time = None
@@ -32,32 +33,53 @@ class TAANScraper:
         logging.info("SCRAPEthis initialized - TAAN Member Data Scraper")
         
     def get_all_member_urls(self) -> List[str]:
-        """Get all member URLs from all alphabetical pages"""
+        """Get all member URLs from all member types and alphabetical pages"""
         logging.info("Starting to collect member URLs from all pages...")
         all_urls = []
         
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            futures = {}
+        # Process each member type (General, Associate, Regional)
+        url_to_type = {}  # Track which URLs belong to which member type
+        
+        for base_url in MEMBERS_URLS:
+            member_type = base_url.split('/')[-1].replace('-', ' ').title()
+            if member_type == "Members":
+                member_type = "General"
+            elif member_type == "Associate Members":
+                member_type = "Associate"
+            elif member_type == "Regional Members":
+                member_type = "Regional"
             
-            # Submit tasks for each alphabetical filter
-            for filter_char in ALPHABET_FILTERS:
-                if filter_char:
-                    url = f"{MEMBERS_URL}?l={filter_char}"
-                else:
-                    url = MEMBERS_URL  # Trending page
+            logging.info(f"Processing {member_type} Member pages...")
+            
+            with ThreadPoolExecutor(max_workers=5) as executor:
+                futures = {}
                 
-                future = executor.submit(self._get_page_member_urls, url)
-                futures[future] = filter_char or 'trending'
-            
-            # Collect results
-            for future in as_completed(futures):
-                filter_name = futures[future]
-                try:
-                    urls = future.result()
-                    all_urls.extend(urls)
-                    logging.info(f"Found {len(urls)} member URLs on '{filter_name}' page")
-                except Exception as e:
-                    logging.error(f"Failed to get URLs from '{filter_name}' page: {str(e)}")
+                # Submit tasks for each alphabetical filter
+                for filter_char in ALPHABET_FILTERS:
+                    if filter_char:
+                        url = f"{base_url}?l={filter_char}"
+                    else:
+                        url = base_url  # Trending page
+                    
+                    future = executor.submit(self._get_page_member_urls, url)
+                    futures[future] = f"{member_type}-{filter_char or 'trending'}"
+                
+                # Collect results
+                for future in as_completed(futures):
+                    filter_name = futures[future]
+                    try:
+                        urls = future.result()
+                        if urls:  # Only log and add if URLs found
+                            # Track member type for each URL
+                            for url in urls:
+                                url_to_type[url] = member_type
+                            all_urls.extend(urls)
+                            logging.info(f"Found {len(urls)} member URLs on '{filter_name}' page")
+                    except Exception as e:
+                        logging.error(f"Failed to get URLs from '{filter_name}' page: {str(e)}")
+        
+        # Store url_to_type mapping for later use
+        self.url_to_type = url_to_type
         
         # Remove duplicates while preserving order
         unique_urls = []
@@ -81,7 +103,7 @@ class TAANScraper:
         
         return member_urls
     
-    def scrape_member_data(self, member_url: str) -> Dict[str, str]:
+    def scrape_member_data(self, member_url: str, member_type: str = "General") -> Dict[str, str]:
         """Scrape data from a single member page"""
         try:
             # Check if already scraped (avoid duplicates)
@@ -97,6 +119,9 @@ class TAANScraper:
             
             soup = BeautifulSoup(response.content, 'html.parser')
             data = extract_member_data(soup)
+            
+            # Add member type
+            data['Member Type'] = member_type
             
             # Validate data quality
             if not validate_data(data):
@@ -142,7 +167,7 @@ class TAANScraper:
         # Scrape with concurrent processing
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
             future_to_url = {
-                executor.submit(self.scrape_member_data, url): url 
+                executor.submit(self.scrape_member_data, url, self.url_to_type.get(url, "General")): url 
                 for url in member_urls
             }
             
@@ -225,7 +250,8 @@ class TAANScraper:
         
         retry_data = []
         for url in failed_copy:
-            data = self.scrape_member_data(url)
+            member_type = self.url_to_type.get(url, "General")
+            data = self.scrape_member_data(url, member_type)
             if data:
                 retry_data.append(data)
         

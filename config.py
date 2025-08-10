@@ -4,7 +4,11 @@ Configuration settings for the TAAN web scraper
 
 # Base URLs
 BASE_URL = "https://www.taan.org.np"
-MEMBERS_URL = f"{BASE_URL}/members"
+MEMBERS_URLS = [
+    f"{BASE_URL}/members",           # General Members (main)
+    f"{BASE_URL}/associate-members", # Associate Members  
+    f"{BASE_URL}/regional-members"   # Regional Association Members
+]
 
 # Scraping settings
 MAX_WORKERS = 10  # Number of concurrent threads
@@ -40,7 +44,8 @@ DATA_FIELDS = [
     'Fax',
     'PO Box',
     'Key Person',
-    'Establishment Date'
+    'Establishment Date',
+    'Member Type'
 ]
 
 # Alphabetical filters for pagination
