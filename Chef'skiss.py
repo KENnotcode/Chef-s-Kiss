@@ -1,6 +1,6 @@
 """
-SCRAPEthis - Fast and accurate TAAN member data scraper
-Scrapes all 2273 members from https://www.taan.org.np/members/
+Chef's Kiss - Fast and accurate TAAN member data scraper
+Scrapes all members from https://www.taan.org.np/members/
 with concurrent processing and exports to Excel
 """
 
@@ -30,7 +30,7 @@ class TAANScraper:
         self.start_time = None
         
         setup_logging()
-        logging.info("SCRAPEthis initialized - TAAN Member Data Scraper")
+        logging.info("Chef's Kiss initialized - TAAN Member Data Scraper")
         
     def get_all_member_urls(self) -> List[str]:
         """Get all member URLs from all member types and alphabetical pages"""
@@ -78,18 +78,38 @@ class TAANScraper:
                     except Exception as e:
                         logging.error(f"Failed to get URLs from '{filter_name}' page: {str(e)}")
         
-        # Store url_to_type mapping for later use
-        self.url_to_type = url_to_type
-        
-        # Remove duplicates while preserving order
+        # Remove duplicates while preserving order and tracking member types
         unique_urls = []
         seen = set()
+        final_url_to_type = {}
+        
+        # Priority order: General > Regional > Associate (General members take precedence)
+        member_type_priority = {"General": 1, "Regional": 2, "Associate": 3}
+        
         for url in all_urls:
             if url not in seen:
                 unique_urls.append(url)
                 seen.add(url)
+                final_url_to_type[url] = url_to_type[url]
+            else:
+                # If duplicate found, keep the higher priority member type
+                current_type = final_url_to_type[url]
+                new_type = url_to_type[url]
+                if member_type_priority.get(new_type, 4) < member_type_priority.get(current_type, 4):
+                    final_url_to_type[url] = new_type
+        
+        # Store final url_to_type mapping for later use
+        self.url_to_type = final_url_to_type
+        
+        # Log member type breakdown
+        type_counts = {}
+        for member_type in final_url_to_type.values():
+            type_counts[member_type] = type_counts.get(member_type, 0) + 1
         
         logging.info(f"Total unique member URLs found: {len(unique_urls)}")
+        for member_type, count in sorted(type_counts.items()):
+            logging.info(f"  - {member_type} Members: {count}")
+        
         return unique_urls
     
     def _get_page_member_urls(self, page_url: str) -> List[str]:
@@ -263,10 +283,10 @@ class TAANScraper:
 
 def main():
     """Main function to run the TAAN scraper"""
-    print("=" * 60)
-    print("SCRAPEthis - TAAN Member Data Scraper")
-    print("Fast and accurate scraping with concurrent processing")
-    print("=" * 60)
+    print("=" * 80)
+    print("Chef's Kiss - TAAN Member Data Scraper")
+    print("For a scraper that works so well, it's a masterpiece.")
+    print("=" * 80)
     
     scraper = TAANScraper()
     

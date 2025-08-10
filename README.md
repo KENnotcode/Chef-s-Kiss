@@ -19,7 +19,7 @@ pip install -r dependencies.txt
 
 2. Run the scraper:
 ```bash
-python SCRAPEthis.py
+python Chef's Kiss.py
 ```
 
 ## Output
@@ -59,3 +59,12 @@ Edit `config.py` to modify:
 - Python 3.7+
 - Internet connection
 - ~250KB disk space for output file
+
+## IMPORTANT
+
+The reason we have 2,289 instead of 2,273 is that:
+
+- The TAAN website actually contains more members than their official count
+- Each member has a unique ID, so there are no true duplicates
+- The website is live and may have new members added since their official count
+- Some member categories might not be included in their official 2,273 count
