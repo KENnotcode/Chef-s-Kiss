@@ -14,7 +14,7 @@ A fast and accurate Python web scraper that extracts all member data from the Tr
 
 1. Install Python dependencies:
 ```bash
-pip install -r dependencies.txt
+pip install -r requirements.txt
 ```
 
 2. Run the scraper:
@@ -38,13 +38,6 @@ The scraper creates `ScrapedData.xlsx` with the following columns:
 - PO Box
 - Key Person
 - Establishment Date
-
-## Performance
-
-- **Speed**: ~7-10 members per second
-- **Success Rate**: 99.9% (2,093/2,095 members)
-- **Data Quality**: 81.1% overall fill rate
-- **Total Runtime**: ~5 minutes for all members
 
 ## Configuration
 
